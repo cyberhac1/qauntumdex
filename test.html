@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/img/arcticons--coinomi__1_-removebg-preview.png">
+</head>
+<body>
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.error-container {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 6rem;
+  margin: 0;
+  color: #ff6b6b;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 10px 0 20px;
+}
+
+.input-section {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-left: 10px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4a4a;
+}
+
+.write-up {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+    </style>
+  <div class="error-container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <div class="input-section">
+      <input type="text" id="userInput" placeholder="What were you looking for?" />
+      <button id="submitButton">Submit</button>
+    </div>
+    <div id="writeUp" class="write-up"></div>
+  </div>
+  <script>
+    document.getElementById("submitButton").addEventListener("click", function () {
+  const userInput = document.getElementById("userInput").value;
+  const writeUp = document.getElementById("writeUp");
+
+  if (userInput.trim() === "") {
+    writeUp.textContent = "Please enter something before submitting.";
+  } else {
+    writeUp.textContent = `You were looking for: "${userInput}". Sorry, we couldn't find it!`;
+  }
+});
+
+  </script>
+</body>
+</html>

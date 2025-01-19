@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloading to 404</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/img/arcticons--coinomi__1_-removebg-preview.png">
+</head>
+<body>
+    <style>
+        /* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Hidden by default */
+.hidden {
+  display: none;
+}
+
+/* Preloading Popup */
+.popup {
+  display: flex; /* Visible on page load */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Spinner Styles */
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 15px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 404 Page Styling */
+#errorPage {
+  text-align: center;
+}
+
+#errorPage h1 {
+  font-size: 3rem;
+  color: #d9534f;
+}
+
+#errorPage p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#errorPage a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#errorPage a:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+  <!-- Preloading Spinner -->
+  <div id="processingPopup" class="popup">
+    <div class="popup-content">
+      <div class="spinner"></div>
+      <p>Procesamiento de transacciones...</p>
+    </div>
+  </div>
+
+  <!-- 404 Content (Initially Hidden) -->
+  <div id="errorPage" class="hidden">
+    <h1>404 - Página no encontrada</h1>
+    <p>La página que buscas no existe.</p>
+    <a href="/quan.html">Volver </a>
+  </div>
+
+  <script>
+    // Preloading simulation
+window.addEventListener("load", () => {
+  // Show the spinner on page load
+  const processingPopup = document.getElementById("processingPopup");
+  const errorPage = document.getElementById("errorPage");
+
+  // Simulate a delay (e.g., 3 seconds) for the "processing" effect
+  setTimeout(() => {
+    // Hide the spinner
+    processingPopup.style.display = "none";
+
+    // Show the 404 content
+    errorPage.classList.remove("hidden");
+  }, 11000); // Preloading time in milliseconds
+});
+
+  </script>
+</body>
+</html>

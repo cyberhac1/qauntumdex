@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Processing</title>
+  <link rel="stylesheet" href="try.css">
+  <link rel="icon" href="/img/arcticons--coinomi__1_-removebg-preview.png">
+</head>
+<body>
+  <!-- Button to trigger the popup -->
+  <button id="processTransactionBtn">Start Transaction</button>
+
+  <!-- Popup Modal -->
+  <div id="processingPopup" class="popup">
+    <div class="popup-content">
+      <div class="spinner"></div>
+      <p>Transaction Processing...</p>
+      <button class="close-btn" onclick="closePopup()">&#x2716;</button>
+    </div>
+  </div>
+
+  <script src="try.js"></script>
+</body>
+</html>

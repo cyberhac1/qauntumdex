@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QAUNTUMDEX</title>
+  <link rel="stylesheet" href="/quan.css">
+  <link rel="icon" href="/img/arcticons--coinomi__1_-removebg-preview.png">
+  <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+  <style>
+    /* Inline CSS for Navbar and Responsiveness */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+/* 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+    } */
+
+    /* #logo h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    } */
+
+    /* .nav {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    } */
+
+    /* .nav-link a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-link a:hover {
+      color: #3d51f2;
+    } */
+
+    /* .sociallinkContainer img {
+      width: 20px;
+      margin-left: 10px;
+      cursor : pointer;
+    } */
+
+   
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+
+      .sociallinkContainer {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .contain {
+        transform: translateY(70px);
+      text-align: center;
+      margin-top: 50px;
+      font-size: 16px;
+    }
+
+    .contain .col {
+      margin: 20px auto;
+      max-width: 400px;
+   
+    }
+
+    .contain input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contain button {
+      padding: 10px 20px;
+      background-color: #0abde3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .contain button:hover {
+      background-color: #2a3fa5;
+    }
+
+    .move {     
+      font-size: 1.7rem;
+      transform: translateY(12px);
+      color: #000;
+    }
+  
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 2px solid ;
+      border-radius: 10px;
+      text-align: center;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
+    }
+
+    .popup-content h2 {
+      margin: 0;
+      color: green;
+    }
+
+    .popup-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3d51f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Responsive Navbar -->
+  <!-- <header>
+    <div id="logo">
+      <a href="./index.html">
+        <h1><span style="color: #3d51f2;">Cryptono</span> Recuperación<span style="color: #3d51f2;">.</span></h1>
+      </a>
+    </div>
+    <ul class="nav" id="nav">
+      <li class="nav-link"><a href="./index.html">Hogar</a></li>
+      <li class="nav-link"><a href="#">Sobre nosotros</a></li>
+      <li class="nav-link"><a href="#">Contacto</a></li>
+      <li class="sociallinkContainer">
+        <img class="sociallink" src="./img/fabook-icon-white.svg" alt="Facebook">
+        <img class="sociallink" src="./img/twitter-icon-white.svg" alt="Twitter">
+        <img class="sociallink" src="./img/inkedin-icon-white.svg" alt="LinkedIn">
+        <img class="sociallink" src="./img/whatsapp-icon-white.svg" alt="WhatsApp">
+      </li>
+    </ul>
+    <div id="barContainer">
+      <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+  </header> -->
+
+  
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo" style="color: #000;"><span class="arcticons--coinomi"></span>QAUNTUMDEX</a>
+
+    <nav class="navbar">
+      <a href="/index.html">Hogar</a>
+      <a href="#packages">Servicio</a>
+      <a href="#services">Acerca de</a>
+      <a href="#pricing">Testimonial</a>
+      <a href="#review">Contacto</a>
+      <a href="#contact">Paginas</a>
+      <a href="#blogs">Blogs</a>
+  </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+
+  <!-- Main Content -->
+  <center>
+    <div class="contain">
+      <div class="col">
+        <p style="color: red;">Error 040:</p>
+        <p>No se puede proceder con el retiro. Se requiere <span style="color: red;">un código de confirmación de 6 dígitos</span>.</p>
+        <label for="inputField">Ingrese el código de 6 dígitos:</label>
+        <input type="password" id="codeInput" maxlength="6" placeholder="Enter code">
+        <button onclick="checkCode()">Proceder a retirar</button>
+      </div>
+
+      <!-- Success Popup -->
+      <div id="successPopup" class="popup">
+        <div class="popup-content">
+          <h2>Éxito!</h2>
+          <p>Procesamiento de transferencia.</p>
+          <!-- <button onclick="closePopup()">DE ACUERDO</button> -->
+           <a href="" class="start">DE ACUERDO</a>
+        </div>
+      </div>
+
+      <p class="move">Puede contactar a cualquiera de nuestro equipo de <br> soporte para comprar los códigos de confirmación para su retiro o cualquier otro agente.</p>
+      <br><br>
+      <a href="mailto:cryptonoservidorderecuperacion@gmail.com" style="color: #00d0ff;">chaindevolvercentrosoporte@gmail.com</a>
+    </div>
+  </center>
+
+  <script>
+    // Navbar Toggle
+    const bar = document.getElementById("bar");
+    const nav = document.getElementById("nav");
+
+    bar.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    // Code Validation
+    function checkCode() {
+      const codeInput = document.getElementById("codeInput").value;
+      const successPopup = document.getElementById("successPopup");
+
+      if (codeInput === "144627") {
+        successPopup.style.display = "block";
+      } else {
+        alert("Código incorrecto. Inténtalo de nuevo.");
+      }
+    }
+
+    // Close Popup
+    function closePopup() {
+      document.getElementById("successPopup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
